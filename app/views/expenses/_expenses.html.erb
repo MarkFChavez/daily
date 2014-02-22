@@ -1,0 +1,18 @@
+<% @expenses_per_day.sort.each do |day, expenses| %>
+  <div class="expense">
+    <table class="table">
+      <caption> <%= day.strftime("%B %d, %Y") %> </caption>
+      <th> ID </th>
+      <th> Description </th>
+      <th> Amount </th>
+      <% for expense in expenses %>
+        <tr>
+          <td> <%= expense.id %> </td>
+          <td> <%= expense.description %> </td>
+          <td> <%= number_to_currency(expense.amount, :unit => "P") %> </td>
+        </tr>
+      <% end %>
+    </table>
+    <strong> Total expenses: <%= number_to_currency(expenses.sum(&:amount), :unit => "P") %> </strong>
+  </div>
+<% end %>

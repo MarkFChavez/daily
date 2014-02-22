@@ -10,18 +10,7 @@
 <div class="row">
   <div class="col-xs-12">
     <div id="expenses">
-      <table class="table">
-        <th> ID </th>
-        <th> Description </th>
-        <th> Amount </th>
-        <%= render @expenses %>
-      </table>
+      <%= render 'expenses/expenses', :locals => { expenses_per_day: @expenses_per_day } %>
     </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <span class="total"> Total expenses: <%= number_to_currency(@expenses.sum(:amount), :unit => "P") %>
   </div>
 </div>
