@@ -22,8 +22,4 @@ feature 'Expenses list' do
       expect(page).to have_content "Total expenses: P200.00"
     end
   end
-
-  scenario 'I should see my total expenses for the current month' do
-
-  end
 end
