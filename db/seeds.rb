@@ -9,6 +9,3 @@
 user = User.new(:email => "los_populares@yahoo.com")
 user.password = 'foobar123'
 user.save!
-
-expense = user.expenses.create!(:amount => 60.00, :description => "Transportation from Paranaque to Makati")
-expense.save!
