@@ -13,7 +13,7 @@ set :deploy_to, "/home/ubuntu/nginx"
 set :use_sudo, false
 set :rails_env, "production"
 
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
 set :ssh_options, { :forward_agent => true }
 set :keep_releases, 5
 
@@ -24,13 +24,13 @@ server "54.213.82.201", :app, :web, :db, :primary => true
 
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
-before "deploy:assets:precompile", "deploy:symlink_config_files"
+# before "deploy:assets:precompile", "deploy:symlink_config_files"
 
 namespace :deploy do
-  desc "Symlink shared config files"
-  task :symlink_config_files do
-    run "#{try_sudo} ln -sf #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
-  end
+  # desc "Symlink shared config files"
+  # task :symlink_config_files do
+  #   run "#{try_sudo} ln -sf #{deploy_to}/shared/config/database.yml #{release_path}/config/database.yml"
+  # end
 
   desc "Restart passenger"
   task :restart do
