@@ -8,6 +8,7 @@ feature 'User sign in' do
       sign_in(user.email, user.password)
 
       user_should_be_signed_in
+      user_should_be_on_dashboard
     end
 
     scenario 'signs me in and shows the email as a greeting' do
@@ -15,6 +16,7 @@ feature 'User sign in' do
 
       user_should_have_greeting
       user_should_be_signed_in
+      user_should_be_on_dashboard
     end
   end
 

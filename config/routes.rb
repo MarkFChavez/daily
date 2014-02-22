@@ -2,6 +2,9 @@ Daily::Application.routes.draw do
   devise_for :users
 
   root "home#show"
+  resource :dashboard, :only => :show
+  resources :expenses, :only => [:new, :create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

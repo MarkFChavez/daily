@@ -1,0 +1,27 @@
+<h1> Welcome to dashboard </h1>
+<hr />
+
+<div class="row">
+  <div class="col-xs-12">
+    <%= link_to "Add expense", new_expense_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div id="expenses">
+      <table class="table">
+        <th> ID </th>
+        <th> Description </th>
+        <th> Amount </th>
+        <%= render @expenses %>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <span class="total"> Total expenses: <%= number_to_currency(@expenses.sum(:amount), :unit => "P") %>
+  </div>
+</div>

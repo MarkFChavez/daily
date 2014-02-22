@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  expense:
+    create:
+      success: "Expense created successfully!"

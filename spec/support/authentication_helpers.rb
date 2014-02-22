@@ -18,8 +18,12 @@ module AuthenticationHelpers
     expect(page).to_not have_css "a.logout", :text => "Logout"
   end
 
+  def user_should_be_on_dashboard
+    expect(current_path).to eq dashboard_path
+  end
+
   def user_should_have_greeting
-    expect(page).to have_css "p.greeting"
+    expect(page).to have_css ".greeting"
   end
 end
 
