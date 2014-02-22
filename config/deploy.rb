@@ -1,6 +1,8 @@
 require 'rvm/capistrano'
 require 'bundler/capistrano'
 
+load 'deploy/assets'
+
 set :application, "Daily"
 set :repository,  "git@github.com:mrkjlchvz/daily.git"
 
